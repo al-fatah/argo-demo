@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: alfatah-app
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/al-fatah/argo-demo.git"
+    targetRevision: main
+    path: argo-demo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: alfatah-ns
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
