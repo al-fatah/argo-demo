@@ -7,7 +7,7 @@ spec:
   source:
     repoURL: "https://github.com/al-fatah/argo-demo.git"
     targetRevision: main
-    path: argo-demo
+    path: 
   destination:
     server: https://kubernetes.default.svc
     namespace: alfatah-ns
